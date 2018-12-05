@@ -2,9 +2,9 @@
 
 ## An App for all Dads/Papas/Fathers 
 
-### Reflect & Increase the Love Shown
+### A Reflection, Journaling & Organizational Tool for Fatherhood
 
-#### This is a program to make life richer for Dads everywhere. It is being made for those with a commitment to their children and their children's lives and development. A place to keep memories and thoughts, goals, and dreams. This app is an information hub for interests and activities - but most of all it is a place for thoughts and relections. 
+#### This is a program to make life richer for Dads everywhere. It is being made for the fathers with a commitment to their children and their children's lives and development. A place to keep memories and thoughts, goals, and dreams. This app is an information hub for interests and activities - but most of all it is a place for thoughts and relections. 
 
 1. Chart your childrens' progress in school with our graphing tool.
 2. Make note of their changing interests
