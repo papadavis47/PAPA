@@ -2,14 +2,15 @@
 
 ## An App for all Dads/Papas/Fathers 
 
-### Keep Things Organized & Increase the Love Shown
+### Reflect & Increase the Love Shown
 
-#### This is a program to make life easier and richer for Dads everywhere. For those with a commitment to their children and their children's lives and development. A place to keep memories and thoughts, reflections, goals, and dreams. This app is app is an information hub for interests and activities - both for children and Dads. 
+#### This is a program to make life richer for Dads everywhere. It is being made for those with a commitment to their children and their children's lives and development. A place to keep memories and thoughts, goals, and dreams. This app is an information hub for interests and activities - but most of all it is a place for thoughts and relections. 
 
-1. Chart your childrens' progress in school.
+1. Chart your childrens' progress in school with our graphing tool.
 2. Make note of their changing interests
-3. Place photographs in the cloud to document their growth.
+3. Place photographs to document their growth.
 4. Document any health concerns and find information.
-5. Collect links to information on any of your childrens' activities.
-6. Journal for thoughts and relections.
+5. Collect links to any source of information on any of your childrens' activities.
+6. Journaling space for thoughts and relections.
 7. Easily save profile on your computer at any time.
+8. Create separate books for each of your kids.
