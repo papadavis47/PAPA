@@ -1,0 +1,19 @@
+I had an idea tonight for an app that I can build with electron. I am thinking
+to build an app that I will call PAPA. Something that resonates with me. I can
+buy the domain papa-app.io and start building it soon. I will use HTML, CSS
+and Javascript to craft the app. I just have to decide on it's features. But I
+think it can hold a lot of different things. Alot of thoughts I have had about
+parenting and how to be better at it. I like the idea, alot. I think it could
+be interesting. And it will be a great way to learn coding.
+
+It could definitely be something that could keep me engaged. It could include
+all sorts of stuff from documenting your kid, to keeping things organized, to
+reflections on fatherhood and goal setting. New fathers, older fathers, ways
+to stay in touch with kids as they get older. Ways of staying mindful.
+Insights that one may have on being a father. Make it something that I would
+want to to use. Anyway, it is an idea that I am going to be pursuing.
+
+It is something that I can build on. There could also be a mobile version, a
+web version, and a desktop version built on electron. I will focus at first on
+the desktop electron version. Just build something for myself to use. That is
+the best way I could go about it.
