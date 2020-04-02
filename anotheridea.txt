@@ -1,0 +1,13 @@
+I think that each child should have their own "book" in PAPA - and each "book"
+should be able to be broken down in "chapters" and each "chapter" should have
+it's own "pages". Ofcourse, each page should be shareable. Each book can have
+as many pages as needed or wanted.  
+
+There needs to be a place to keep notes and check boxes on each of the pages
+that the user interacts with. These can be used to keep track of tasks and
+check them off of a list. Just like in the notepad app, fromScratch - which I
+am a fan of.
+
+I also need it to look good and people should be able to switch between light
+and dark - on each page. Two different modes - like on text editors - only for
+each page in the app.
