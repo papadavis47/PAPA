@@ -43,6 +43,8 @@ A functioning Electron desktop app that the user can download from my GitHub rep
 
 [Udemy Master Electron: Desktop Apps with HTML, JavaScript and CSS](https://www.udemy.com/course/master-electron/)
 
+[Electron Tutorial App Github Repository](https://github.com/crilleengvall/electron-tutorial-app)
+
 [Why you should know about Electron.js in 2019](https://dev.to/borrellidev/why-you-should-know-about-electron-js-in-2019-1f4m)
 
 [Electron Basics - Desktop Apps w/ JavaScript](https://www.youtube.com/watch?v=nW4Qe4QBWow)
@@ -60,6 +62,8 @@ A functioning Electron desktop app that the user can download from my GitHub rep
 [React.js](https://reactjs.org/)
 
 [Flat UI Colors](https://flatuicolors.com/)
+
+[Flaticon](https://www.flaticon.com/)
 
 ![image1](mdimages/homepage.jpg)
 ![image2](mdimages/scrapbook.jpg)
