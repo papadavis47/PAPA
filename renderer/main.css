@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&family=Tinos&display=swap');
+
+html, body {
+    height: 100%
+}
+
+
+body {
+    margin: 0;
+    display: flex;
+    background:#273c75;
+    color: #f5f6fa;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    
+    
+}
+
+h1 {
+    font-size: 32px;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+header {
+    text-align: center;
+}
