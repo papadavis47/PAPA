@@ -23,6 +23,9 @@ const template = [
         role: 'editMenu'
     },
     {
+        role: 'viewMenu'
+    },
+    {
         role: 'windowMenu',
     },
     {
@@ -38,34 +41,6 @@ const template = [
         ]
     }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

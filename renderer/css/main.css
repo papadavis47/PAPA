@@ -116,3 +116,15 @@ p   {
     }
 
 }
+
+/* ------------------------------------Hide and Show Modals----------------------------*/
+#modal-1 {
+    display: none;
+    height: 100%;
+    min-height: 100vh;
+    background: black;
+}
+
+#show-home {
+    color: white;
+}

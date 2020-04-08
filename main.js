@@ -9,7 +9,7 @@ function createWindow () {
     defaultWidth: 1000, defaultHeight: 700
   })
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: winState.width,
     height: winState.height,
     x: winState.x, y: winState.y,
@@ -29,6 +29,12 @@ function createWindow () {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
+
+  // Listen for window being closed
+  mainWindow.on("closed", () => {
+    mainWindow = null;
+  });
+  
 }
 
 // This method will be called when Electron has finished
