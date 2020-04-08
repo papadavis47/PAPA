@@ -1,21 +1,34 @@
 const { app, BrowserWindow } = require('electron')
+const windowStateKeeper = require('electron-window-state')
+
+let mainWindow;
 
 function createWindow () {
+
+  let winState = windowStateKeeper({
+    defaultWidth: 1000, defaultHeight: 700
+  })
   // Create the browser window.
-  const win = new BrowserWindow({
-    width: 1000,
-    height: 700,
-    frame: false,
+  const mainWindow = new BrowserWindow({
+    width: winState.width,
+    height: winState.height,
+    x: winState.x, y: winState.y,
+    minWidth: 500,
+    minHeight: 600,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    // frame: false,
     webPreferences: {
       nodeIntegration: true
     }
   })
 
   // and load the index.html of the app.
-  win.loadFile('renderer/main.html')
+  mainWindow.loadFile('./renderer/html/main.html')
+
+  winState.manage(mainWindow)
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

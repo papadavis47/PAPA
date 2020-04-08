@@ -8,12 +8,12 @@
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
     <header>
-      <h1>PAPA</h1>
-      <img id="icon-1" src="assets/dadicon.png" alt="Father playing with child" title="Click Here To Enter Your Space">
+      <h1 id="test" title="Click here for more information">PAPA</h1>
+      <img id="icon-1" src="../assets/icons/dadicon.png" alt="Father playing with child" title="Click Here To Enter Your Space">
     </header>
     <section id="information">
       <p id="direction">Click the icon or press F1 to enter your space</p>
@@ -22,9 +22,9 @@
     </div>
       <button class="myButton">Start a Journal</button>
       <div class="statements">
-      <p>Create a section for each your children</p>
+      <p>Create a unique section for each of your kids</p>
     </div>
-      <button class="myButton">Add a Section For Your Child</button>
+      <button class="myButton">Add a Section</button>
       <div class="statements">
       <p>Capture memories and/or document ideas and plans</p>
     </div>
@@ -35,7 +35,9 @@
     <div id="modal-2"></div>
     <div id="modal-3"></div>
     <script>
-      require('./app.js');
+      require('../app.js');
+      require('../menu.js');
+      require('../about.js');
     </script>
   </body>
 </html>

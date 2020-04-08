@@ -1,5 +1,5 @@
 {
-  "name": "papa",
+  "name": "PAPA",
   "version": "1.0.0",
   "description": "An Electron Journaling App",
   "main": "main.js",
@@ -16,7 +16,7 @@
     "Electron"
   ],
   "author": "John William Davis",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/papadavis47/PAPA/issues"
   },
