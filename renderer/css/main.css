@@ -69,10 +69,10 @@ p   {
 
 
 .myButton {
-	background:linear-gradient(to bottom, #7f8fa6 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7f8fa6 5%, #718093 100%);
 	background-color: #7f8fa6;
 	border-radius:28px;
-	border:1px solid #4e6096;
+	border:1px solid #dcdde1;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -85,7 +85,7 @@ p   {
 }
 
 .myButton:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7f8fa6 100%);
+	background:linear-gradient(to bottom,#718093 5%, #7f8fa6 100%);
 	background-color:#476e9e;
 }
 .myButton:active {
