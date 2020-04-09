@@ -15,7 +15,7 @@ let showHome = document.getElementById('show-home')
 
 journal.addEventListener("click", (e) => {
     wrapper.style.display = "none"
-    firstModal.style.display = "block";
+    firstModal.style.display = "flex";
   });
 
 // Hide modal-1

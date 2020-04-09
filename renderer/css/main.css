@@ -117,14 +117,45 @@ p   {
 
 }
 
-/* ------------------------------------Hide and Show Modals----------------------------*/
+/* ------------------------------------ Journal Entry View ---------------------------*/
+
 #modal-1 {
+    display: flex;
     display: none;
     height: 100%;
     min-height: 100vh;
-    background: black;
+    background:#353b48;
+    flex-flow: column;
+    align-content: center;
+    text-align: center;
+    
 }
 
 #show-home {
     color: white;
+    flex-basis: auto;
+    margin: 30px;
+    
 }
+
+#entry-title {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+textarea {
+    outline: none;
+    resize: none;
+    overflow: auto;
+    margin: 0 20px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    padding: 0 10px;
+}
+
+textarea::placeholder {
+    color: lightgray;
+}
+
+/* ------------------------------------ Entry Display View ---------------------------*/
