@@ -69,8 +69,8 @@ p   {
 
 
 .myButton {
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	background-color:#7892c2;
+	background:linear-gradient(to bottom, #7f8fa6 5%, #476e9e 100%);
+	background-color: #7f8fa6;
 	border-radius:28px;
 	border:1px solid #4e6096;
 	display:inline-block;
@@ -85,7 +85,7 @@ p   {
 }
 
 .myButton:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7f8fa6 100%);
 	background-color:#476e9e;
 }
 .myButton:active {
@@ -134,7 +134,7 @@ p   {
 #show-home {
     color: white;
     flex-basis: auto;
-    margin: 30px;
+    margin: 40px;
     
 }
 
@@ -149,13 +149,19 @@ textarea {
     resize: none;
     overflow: auto;
     margin: 0 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid silver;
     padding: 0 10px;
+    
 }
 
 textarea::placeholder {
+    padding-top: 10px;
     color: lightgray;
+}
+
+form {
+    flex-basis: auto;
 }
 
 /* ------------------------------------ Entry Display View ---------------------------*/
