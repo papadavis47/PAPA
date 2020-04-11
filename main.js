@@ -13,8 +13,8 @@ function createWindow () {
     width: winState.width,
     height: winState.height,
     x: winState.x, y: winState.y,
-    minWidth: 500,
-    minHeight: 600,
+    minWidth: 660,
+    minHeight: 700,
     icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
     // frame: false,
     webPreferences: {
