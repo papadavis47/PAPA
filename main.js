@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
 let mainWindow;
@@ -61,32 +61,30 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-function creatAboutWindow () {
+function creatAboutWindow() {
 
-  // Create the browser window.
   aboutWindow = new BrowserWindow({
+    fullscreen: true,
     width: 1000,
     height:800,
     minWidth: 660,
     minHeight: 700,
     icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
-    // frame: false,
     webPreferences: {
       nodeIntegration: true
     }
   })
 
-  // and load the index.html of the app.
-  aboutWindow.loadFile('./renderer/html/about')
-
-
-
-  // Open the DevTools.
-  aboutWindow.webContents.openDevTools()
+  aboutWindow.loadFile('./renderer/html/about.html')
 
   // Listen for window being closed
   aboutWindow.on("closed", () => {
-    mainWindow = null;
+    aboutWindow = null;
   });
   
 }
+
+// listen for aboutpagewindow click
+ipcMain.on('aboutPage', () => {
+  creatAboutWindow();
+})
