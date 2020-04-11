@@ -32,7 +32,7 @@ function createWindow () {
 
   // Listen for window being closed
   mainWindow.on("closed", () => {
-    mainWindow = null;
+    app.quit();
   });
   
 }
@@ -61,7 +61,7 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-function creatAboutWindow() {
+function createAboutWindow() {
 
   aboutWindow = new BrowserWindow({
     fullscreen: true,
@@ -86,5 +86,5 @@ function creatAboutWindow() {
 
 // listen for aboutpagewindow click
 ipcMain.on('aboutPage', () => {
-  creatAboutWindow();
+  createAboutWindow();
 })

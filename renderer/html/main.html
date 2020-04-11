@@ -45,22 +45,15 @@
     <div id="modal-2">
       <div id="entry"></div>
     </div>
-    <!-- About this app -->
-    <div class="aboutPage" id="modal-3">
-      <h2>For the brightest lights in my darkest nights, and the inspiration for this project . . . </h2>
-      <p>Diego, Santiago and Linda - April 2020</p>
-      <img id="backhome" src="../assets/inspiration.jpg" alt="My Kids, Diego, Santiago & Linda">
-      <p>Click picture to go back Home</p>
-    </div>
   </main>
   <script src="../app.js"></script>
   <script src="../menu.js"></script>
   <script>
     const electron = require('electron')
     
-    const test = document.getElementById('testOne')
+    const about = document.getElementById('aboutClickItem')
 
-    test.addEventListener('click', (e) => {
+    about.addEventListener('click', (e) => {
         ipcRenderer.send("aboutPage")
     });
 
