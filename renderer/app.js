@@ -1,6 +1,4 @@
-const { ipcRenderer, remote, shell } = require('electron');
-const items = require('./journals');
-const path = require('path')
+const { ipcRenderer } = require('electron');
 
 let journal = document.getElementById('journal-entry')
 let displayEntry = document.getElementById('modal-2')
