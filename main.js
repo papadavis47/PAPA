@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, webContents } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
 let mainWindow;
@@ -154,12 +154,10 @@ function createDisplayWindow() {
 
 ipcMain.on('entry:add', (e, thought) => {
   console.log(thought)
-  // entryWindow.close();
+  createDisplayWindow()
   console.log(thought)
-  createDisplayWindow();
-  mainWindow.webContents.send('entry:add', thought)
-  console.log(thought)
-  console.log(thought)
+  displayWindow.webContents.send('entry:add', thought)
+  
 })
 
 // createDisplayWindow()
