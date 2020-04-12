@@ -17,7 +17,7 @@
       <form id="entry-form">
         <textarea id="thought" cols="70" rows="30" autofocus></textarea>
         <button type="submit" class="myButton" id="show-home">
-          Save Entry
+          Save Your Thoughts
         </button>
       </form>
     </div>
@@ -29,10 +29,9 @@
       entryForm.addEventListener("submit", submitEntry);
 
       function submitEntry(e) {
-        e.preventDefault();
         const thought = document.getElementById("thought").value;
-        ipcRenderer.send("add:entry", thought);
-      }
+        ipcRenderer.send("entry:add", thought);
+      };
     </script>
   </body>
 </html>

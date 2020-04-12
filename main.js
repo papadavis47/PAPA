@@ -4,6 +4,7 @@ const windowStateKeeper = require('electron-window-state')
 let mainWindow;
 let aboutWindow;
 let entryWindow;
+let displayWindow;
 
 function createWindow () {
 
@@ -129,8 +130,8 @@ ipcMain.on('write', () => {
 function createDisplayWindow() {
 
   displayWindow = new BrowserWindow({
-    parent: entryWindow,
-    modal: true,
+    // parent: entryWindow,
+    // modal: true,
     width: 1000,
     height:800,
     minWidth: 660,
@@ -151,7 +152,15 @@ function createDisplayWindow() {
 
 // Listen for value from textarea submit
 
-ipcMain.on('add:entry', (e, thought) => {
+ipcMain.on('entry:add', (e, thought) => {
+  console.log(thought)
+  // entryWindow.close();
   console.log(thought)
   createDisplayWindow();
+  mainWindow.webContents.send('entry:add', thought)
+  console.log(thought)
+  console.log(thought)
 })
+
+// createDisplayWindow()
+
