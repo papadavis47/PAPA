@@ -103,6 +103,7 @@ ipcMain.on('aboutPage', () => {
 function createEntryWindow() {
 
   entryWindow = new BrowserWindow({
+    parent: mainWindow,
     width: 1000,
     height:800,
     minWidth: 660,
@@ -154,9 +155,9 @@ function createDisplayWindow() {
 
 ipcMain.on('entry:add', (e, thought) => {
   console.log(thought)
-  createDisplayWindow()
-  console.log(thought)
-  displayWindow.webContents.send('entry:add', thought)
+  entryWindow.close()
+  // console.log(thought)   
+  mainWindow.webContents.send('entry:add', thought)
   
 })
 

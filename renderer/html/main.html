@@ -65,6 +65,18 @@
         ipcRenderer.send('write')
       });
 
+      // Add Journal Entry
+      ipcRenderer.on("entry:add", (e, thought) => {
+        console.log(thought)
+        // const paragraph = document.createElement("div");
+        // console.log(paragraph);
+        // console.log(journalHolder);
+        // const node = document.createTextNode(thought);
+        // console.log(node);
+        // paragraph.appendChild(node);
+        // journalHolder.appendChild(paragraph);
+      });
+
     </script>
   </body>
 </html>
