@@ -21,7 +21,7 @@
       <div class="statements">
       <p>A journaling application for fathers</p>
     </div>
-      <button class="myButton" id="journal-entry">Start a Journal</button>
+      <button class="myButton" id="journal-entry">Make a Journal Entry</button>
       <div class="statements">
       <p>Create a unique section for each of your kids</p>
     </div>
@@ -56,6 +56,14 @@
     about.addEventListener('click', (e) => {
         ipcRenderer.send("aboutPage")
     });
+    </script>
+    <script>
+
+      const entryForm = document.getElementById('journal-entry')
+
+      entryForm.addEventListener('click', (e) => {
+        ipcRenderer.send('write')
+      });
 
     </script>
   </body>

@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
 let mainWindow;
+let aboutWindow;
+let entryWindow;
 
 function createWindow () {
 
@@ -61,6 +63,9 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// Here is where I have the about window information
+
 function createAboutWindow() {
 
   aboutWindow = new BrowserWindow({
@@ -84,7 +89,69 @@ function createAboutWindow() {
   
 }
 
-// listen for aboutpagewindow click
+// Listen for aboutpagewindow click
+
 ipcMain.on('aboutPage', () => {
   createAboutWindow();
+});
+
+
+
+// Here is where I create the journal Entry window
+
+function createEntryWindow() {
+
+  entryWindow = new BrowserWindow({
+    width: 1000,
+    height:800,
+    minWidth: 660,
+    minHeight: 700,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  entryWindow.loadFile('./renderer/html/journalForm.html')
+
+  // Listen for window being closed
+  entryWindow.on("closed", () => {
+    aboutWindow = null;
+  });
+  
+}
+
+// listen for entryWindow click
+ipcMain.on('write', () => {
+  createEntryWindow();
+})
+
+function createDisplayWindow() {
+
+  displayWindow = new BrowserWindow({
+    parent: entryWindow,
+    modal: true,
+    width: 1000,
+    height:800,
+    minWidth: 660,
+    minHeight: 700,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  displayWindow.loadFile('./renderer/html/entries.html')
+
+  // Listen for window being closed
+  displayWindow.on("closed", () => {
+    aboutWindow = null;
+  }); 
+}
+
+// Listen for value from textarea submit
+
+ipcMain.on('add:entry', (e, thought) => {
+  console.log(thought)
+  createDisplayWindow();
 })
