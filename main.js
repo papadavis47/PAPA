@@ -5,6 +5,7 @@ let mainWindow;
 let aboutWindow;
 let entryWindow;
 let spaceWindow;
+let scrapbookWindow;
 
 function createWindow () {
 
@@ -167,5 +168,34 @@ ipcMain.on('entry:add', (e, thought) => {
   
 })
 
-// createDisplayWindow()
+// createScrapBookWindow()
 
+function createScrapBookWindow() {
+
+  scrapbookWindow = new BrowserWindow({
+    // parent: entryWindow,
+    // modal: true,
+    fullscreen: true,
+    width: 1000,
+    height:800,
+    minWidth: 660,
+    minHeight: 700,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  scrapbookWindow.loadFile('./renderer/html/scrapbook.html')
+
+  // Listen for window being closed
+  scrapbookWindow.on("closed", () => {
+    aboutWindow = null;
+  }); 
+}
+
+
+// listen for entryWindow click
+ipcMain.on('scrapBookPage', (e) => {
+  createScrapBookWindow();
+})

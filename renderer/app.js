@@ -45,3 +45,8 @@ section.addEventListener("click", (e) => {
   // Create a section
   ipcRenderer.send("section:add");
 });
+
+// Launch the Scrapbook Window
+scrapbook.addEventListener("click", (e) => {
+  ipcRenderer.send('scrapBookPage')
+})
