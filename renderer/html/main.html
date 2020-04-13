@@ -24,7 +24,7 @@
       <div class="statements">
       <p>Capture memories and/or document ideas and plans</p>
     </div>
-      <button class="myButton">Create a Scrapbook</button>
+      <button class="myButton" id="scrapbook">Create a Scrapbook</button>
     </section>
     <main>
     </div>
@@ -37,46 +37,5 @@
   </main>
   <script src="../app.js"></script>
   <script src="../menu.js"></script>
-  <script>
-    const electron = require('electron')
-    
-    const about = document.getElementById('aboutClickItem')
-
-    about.addEventListener('click', (e) => {
-        ipcRenderer.send("aboutPage")
-    });
-    </script>
-    <script>
-
-      const entryForm = document.getElementById('journal-entry')
-
-      entryForm.addEventListener('click', (e) => {
-        wrapper.style.display = "none"
-        displayEntry.style.display = "flex"
-        ipcRenderer.send('write')
-      });
-
-      //-----------------------Above is the logic to show the form to input a journal entry ---------
-      // ----------------------And prepare the main window to hold the entry ------------------------
-      const journalHolder = document.getElementById('entry')
-      // Add Journal Entry
-      ipcRenderer.on("entry:add", (e, thought) => {
-        const paragraph = document.createElement("div");
-        const node = document.createTextNode(thought);
-        paragraph.appendChild(node);
-        journalHolder.appendChild(paragraph);
-      });
-
-    </script>
-    <script>
-      const section = document.getElementById('section')
-
-      section.addEventListener('click', (e) => {
-        // Create a section
-        ipcRenderer.send("section:add")
-
-      })
-
-    </script>
   </body>
 </html>
