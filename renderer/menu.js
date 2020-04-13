@@ -37,6 +37,10 @@ const template = [
         {
             label: "Github",
             click: () => {shell.openExternal('https://github.com/papadavis47/PAPA')}
+        },
+        {
+            label: "About",
+            click: () => { CreateAboutWindow() }
         }
         ]
     }

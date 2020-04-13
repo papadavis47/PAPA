@@ -1,7 +1,11 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, webContents } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
 let mainWindow;
+let aboutWindow;
+let entryWindow;
+let spaceWindow;
+let scrapbookWindow;
 
 function createWindow () {
 
@@ -32,7 +36,7 @@ function createWindow () {
 
   // Listen for window being closed
   mainWindow.on("closed", () => {
-    mainWindow = null;
+    app.quit();
   });
   
 }
@@ -61,3 +65,137 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// Here is where I have the about window information
+
+function createAboutWindow() {
+
+  aboutWindow = new BrowserWindow({
+    fullscreen: true,
+    width: 1000,
+    height:800,
+    minWidth: 660,
+    minHeight: 700,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  aboutWindow.loadFile('./renderer/html/about.html')
+
+  // Listen for window being closed
+  aboutWindow.on("closed", () => {
+    aboutWindow = null;
+  });
+  
+}
+
+// Listen for aboutpagewindow click
+
+ipcMain.on('aboutPage', () => {
+  createAboutWindow();
+});
+
+
+
+// Here is where I create the journal Entry window
+
+function createEntryWindow() {
+
+  entryWindow = new BrowserWindow({
+    parent: mainWindow,
+    width: 1000,
+    height:800,
+    minWidth: 660,
+    minHeight: 700,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  entryWindow.loadFile('./renderer/html/journalForm.html')
+
+  // Listen for window being closed
+  entryWindow.on("closed", () => {
+    aboutWindow = null;
+  });
+  
+}
+
+// listen for entryWindow click
+ipcMain.on('write', () => {
+  createEntryWindow();
+})
+
+// Here is where I create the SpaceWindow ---------------------------------------------
+
+function createSpaceWindow() {
+
+  spaceWindow = new BrowserWindow({
+    // parent: entryWindow,
+    // modal: true,
+    width: 1000,
+    height:800,
+    minWidth: 660,
+    minHeight: 700,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  spaceWindow.loadFile('./renderer/html/space.html')
+
+  // Listen for window being closed
+  spaceWindow.on("closed", () => {
+    aboutWindow = null;
+  }); 
+}
+
+ipcMain.on('section:add', () => {
+  createSpaceWindow();
+})
+
+// Listen for value from textarea submit
+
+ipcMain.on('entry:add', (e, thought) => {
+  console.log(thought)
+  // entryWindow.close()
+  // console.log(thought)   
+  mainWindow.webContents.send('entry:add', thought)
+  
+})
+
+// createScrapBookWindow()
+
+function createScrapBookWindow() {
+
+  scrapbookWindow = new BrowserWindow({
+    // parent: entryWindow,
+    // modal: true,
+    fullscreen: true,
+    width: 1000,
+    height:800,
+    minWidth: 660,
+    minHeight: 700,
+    icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  scrapbookWindow.loadFile('./renderer/html/scrapbook.html')
+
+  // Listen for window being closed
+  scrapbookWindow.on("closed", () => {
+    aboutWindow = null;
+  }); 
+}
+
+
+// listen for entryWindow click
+ipcMain.on('scrapBookPage', (e) => {
+  createScrapBookWindow();
+})
