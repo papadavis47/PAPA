@@ -18,6 +18,14 @@ const journalHolder = document.getElementById("entry");
 const section = document.getElementById("section");
 // This is the button for creating a scrapbook
 const scrapbook = document.getElementById("scrapbook");
+// This is button to return back from displaying entries
+const backhome = document.getElementById('backhome');
+
+// This will return home after inputting and reading a journal entry
+backhome.addEventListener('click', (e) => {
+  displayEntry.style.display = 'none';
+  wrapper.style.display = 'block';
+})
 
 // This will launch the About Page
 about.addEventListener("click", (e) => {
