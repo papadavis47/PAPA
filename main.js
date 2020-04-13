@@ -4,7 +4,7 @@ const windowStateKeeper = require('electron-window-state')
 let mainWindow;
 let aboutWindow;
 let entryWindow;
-let displayWindow;
+let spaceWindow;
 
 function createWindow () {
 
@@ -128,9 +128,11 @@ ipcMain.on('write', () => {
   createEntryWindow();
 })
 
-function createDisplayWindow() {
+// Here is where I create the SpaceWindow ---------------------------------------------
 
-  displayWindow = new BrowserWindow({
+function createSpaceWindow() {
+
+  spaceWindow = new BrowserWindow({
     // parent: entryWindow,
     // modal: true,
     width: 1000,
@@ -143,10 +145,10 @@ function createDisplayWindow() {
     }
   })
 
-  displayWindow.loadFile('./renderer/html/entries.html')
+  spaceWindow.loadFile('./renderer/html/space.html')
 
   // Listen for window being closed
-  displayWindow.on("closed", () => {
+  spaceWindow.on("closed", () => {
     aboutWindow = null;
   }); 
 }

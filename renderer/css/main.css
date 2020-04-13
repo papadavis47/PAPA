@@ -119,7 +119,7 @@ p   {
 
 /* ------------------------------------ Journal Entry View ---------------------------*/
 
-#modal-1 {
+#modal-2 {
     display: flex;
     display: none;
     height: 100%;
@@ -131,38 +131,9 @@ p   {
     
 }
 
-#show-home {
-    color: white;
-    flex-basis: auto;
-    margin: 40px;
-    
-}
 
-#entry-title {
-    font-size: 28px;
-    font-weight: bold;
-    font-style: italic;
-}
 
-textarea {
-    outline: none;
-    resize: none;
-    overflow: auto;
-    margin: 0 20px;
-    border-radius: 10px;
-    border: 1px solid silver;
-    padding: 0 10px;
-    
-}
 
-textarea::placeholder {
-    padding-top: 10px;
-    color: lightgray;
-}
-
-form {
-    flex-basis: auto;
-}
 
 
 

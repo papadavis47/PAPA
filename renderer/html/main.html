@@ -33,17 +33,10 @@
     </section>
     <main>
     </div>
-    <!-- The form to make a journal entry -->
-    <div id="modal-1">
-      <h1 id="entry-title">Reflections</h1>
-    <form>
-      <textarea name="" id="thoughts" cols="70" rows="30" autofocus></textarea>
-    </form>
-      <button class="myButton" id="show-home">Save Entry</button>
-    </div>
     <!-- Show the new journal entry -->
     <div id="modal-2">
-      <div id="entry"></div>
+      <div id="journal-entries"></div>
+    <div id="entry"></div>
     </div>
   </main>
   <script src="../app.js"></script>
@@ -62,19 +55,24 @@
       const entryForm = document.getElementById('journal-entry')
 
       entryForm.addEventListener('click', (e) => {
+        wrapper.style.display = "none"
+        displayEntry.style.display = "flex"
         ipcRenderer.send('write')
       });
 
+      //-----------------------Above is the logic to show the form to input a journal entry ---------
+      // ----------------------And prepare the main window to hold the entry ------------------------
+      const journalHolder = document.getElementById('entry')
       // Add Journal Entry
       ipcRenderer.on("entry:add", (e, thought) => {
         console.log(thought)
-        // const paragraph = document.createElement("div");
-        // console.log(paragraph);
-        // console.log(journalHolder);
-        // const node = document.createTextNode(thought);
-        // console.log(node);
-        // paragraph.appendChild(node);
-        // journalHolder.appendChild(paragraph);
+        const paragraph = document.createElement("div");
+        console.log(paragraph);
+        console.log(journalHolder);
+        const node = document.createTextNode(thought);
+        console.log(node);
+        paragraph.appendChild(node);
+        journalHolder.appendChild(paragraph);
       });
 
     </script>
