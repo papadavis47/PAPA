@@ -34,7 +34,7 @@ entryForm.addEventListener("click", (e) => {
 
 // Add Journal Entry
 ipcRenderer.on("entry:add", (e, thought) => {
-  const paragraph = document.createElement("div");
+  const paragraph = document.createElement("p");
   const node = document.createTextNode(thought);
   paragraph.appendChild(node);
   journalHolder.appendChild(paragraph);

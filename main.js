@@ -104,7 +104,7 @@ ipcMain.on('aboutPage', () => {
 function createEntryWindow() {
 
   entryWindow = new BrowserWindow({
-    parent: mainWindow,
+    // parent: mainWindow,
     width: 1000,
     height:800,
     minWidth: 660,
@@ -136,7 +136,7 @@ function createSpaceWindow() {
   spaceWindow = new BrowserWindow({
     // parent: entryWindow,
     // modal: true,
-    fullscreen: true;
+    fullscreen: true,
     width: 1000,
     height:800,
     minWidth: 660,

@@ -128,7 +128,21 @@ p   {
     flex-flow: column;
     align-content: justify;
     text-align: justify;
+
     
+}
+
+#modal-2 p {
+    font-size: 22px;
+    font-style: italic;
+    margin-left: 30px;
+}
+
+#modal-2 h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 
