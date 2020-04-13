@@ -103,11 +103,15 @@ ipcMain.on('aboutPage', () => {
 
 function createEntryWindow() {
 
+  let winState = windowStateKeeper({
+    defaultWidth: 500, defaultHeight: 700
+  })
+
   entryWindow = new BrowserWindow({
-    // parent: mainWindow,
-    width: 1000,
-    height:800,
-    minWidth: 660,
+    width: winState.width,
+    height: winState.height,
+    x: winState.x, y: winState.y,
+    minWidth: 500,
     minHeight: 700,
     icon: __dirname+'/renderer/assets/icons/fatherhood1.png',
     webPreferences: {
@@ -116,6 +120,8 @@ function createEntryWindow() {
   })
 
   entryWindow.loadFile('./renderer/html/journalForm.html')
+
+  winState.manage(entryWindow)
 
   // Listen for window being closed
   entryWindow.on("closed", () => {
