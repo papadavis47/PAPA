@@ -3,11 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>PAPA</title>
-    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline';"
-    />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
@@ -25,7 +20,7 @@
       <div class="statements">
       <p>Create a unique section for each of your kids</p>
     </div>
-      <button class="myButton" id="testOne">Add a Section</button>
+      <button class="myButton" id="section">Add a Section</button>
       <div class="statements">
       <p>Capture memories and/or document ideas and plans</p>
     </div>
@@ -35,6 +30,7 @@
     </div>
     <!-- Show the new journal entry -->
     <div id="modal-2">
+      
       <div id="journal-entries"></div>
     <div id="entry"></div>
     </div>
@@ -65,15 +61,21 @@
       const journalHolder = document.getElementById('entry')
       // Add Journal Entry
       ipcRenderer.on("entry:add", (e, thought) => {
-        console.log(thought)
         const paragraph = document.createElement("div");
-        console.log(paragraph);
-        console.log(journalHolder);
         const node = document.createTextNode(thought);
-        console.log(node);
         paragraph.appendChild(node);
         journalHolder.appendChild(paragraph);
       });
+
+    </script>
+    <script>
+      const section = document.getElementById('section')
+
+      section.addEventListener('click', (e) => {
+        // Create a section
+        ipcRenderer.send("section:add")
+
+      })
 
     </script>
   </body>

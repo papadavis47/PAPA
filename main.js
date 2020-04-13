@@ -153,11 +153,15 @@ function createSpaceWindow() {
   }); 
 }
 
+ipcMain.on('section:add', () => {
+  createSpaceWindow();
+})
+
 // Listen for value from textarea submit
 
 ipcMain.on('entry:add', (e, thought) => {
   console.log(thought)
-  entryWindow.close()
+  // entryWindow.close()
   // console.log(thought)   
   mainWindow.webContents.send('entry:add', thought)
   

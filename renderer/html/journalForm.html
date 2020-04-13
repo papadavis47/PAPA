@@ -8,7 +8,38 @@
         color: white;
         background: #353b48;
         font-family: "Source Sans Pro", sans-serif;
+        text-align: center;
       }
+
+.myButton {
+	background:linear-gradient(to bottom, #7f8fa6 5%, #718093 100%);
+	background-color: #7f8fa6;
+	border-radius:28px;
+	border:1px solid #dcdde1;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+    -webkit-app-region:no-drag;
+}
+
+.myButton:hover {
+	background:linear-gradient(to bottom,#718093 5%, #7f8fa6 100%);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton:focus {
+    outline: none;
+}
+        
     </style>
   </head>
   <body>
@@ -16,6 +47,7 @@
       <h1 id="entry-title">Reflections</h1>
       <form id="entry-form">
         <textarea id="thought" cols="70" rows="30" autofocus></textarea>
+        <br>
         <button type="submit" class="myButton" id="show-home">
           Save Your Thoughts
         </button>
