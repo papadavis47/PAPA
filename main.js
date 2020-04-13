@@ -32,7 +32,7 @@ function createWindow () {
   winState.manage(mainWindow)
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Listen for window being closed
   mainWindow.on("closed", () => {
@@ -136,6 +136,7 @@ function createSpaceWindow() {
   spaceWindow = new BrowserWindow({
     // parent: entryWindow,
     // modal: true,
+    fullscreen: true;
     width: 1000,
     height:800,
     minWidth: 660,
