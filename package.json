@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/papadavis47/PAPA#readme",
   "devDependencies": {
-    "electron": ">=9.4.0",
+    "electron": ">=18.3.7",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
